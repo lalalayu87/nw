@@ -7,3 +7,6 @@ export const POST_REGISTER = "/api/auth/register";
 //PROFILE
 // export const POST_EDIT_JWT_PROFILE = "/post-jwt-profile";
 // export const POST_EDIT_PROFILE = "/user";
+
+//큐시트
+export const GET_CUESHEET = "/api/v1/qsheet";
