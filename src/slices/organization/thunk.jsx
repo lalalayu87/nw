@@ -1,5 +1,5 @@
 // import { createAsyncThunk } from "@reduxjs/toolkit";
-// import { getOrganizationListApi } from "@helpers/Organization/organization_helper";
+// import { getOrganizationListApi } from "../../helpers/Auth/auth_helper";
 
 // export const getOrganizationList = createAsyncThunk("/org", async () => {
 //   try {

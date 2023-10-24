@@ -18,7 +18,7 @@ const Navdata = () => {
   const [isMultiLevel, setIsMultiLevel] = useState(false);
 
   const [isFinaltempl, setIsFinaltempl] = useState(false);
-  const [isQsheet, setIsQsheet] = useState(false);
+  const [isCuesheet, setIsCuesheet] = useState(false);
 
   const [iscurrentState, setIscurrentState] = useState("Dashboard");
 
@@ -41,8 +41,8 @@ const Navdata = () => {
     if (iscurrentState !== "finalTempl") {
       setIsFinaltempl(false);
     }
-    if (isQsheet !== "qsheet") {
-      setIsQsheet(false);
+    if (isCuesheet !== "cuesheet") {
+      setIsCuesheet(false);
     }
   }, [
     history,
@@ -138,29 +138,29 @@ const Navdata = () => {
       ],
     },
     {
-      id: "qsheet",
+      id: "cuesheet",
       label: "큐시트",
       icon: "ri-dashboard-2-line",
       link: "/#",
-      stateVariables: isQsheet,
+      stateVariables: isCuesheet,
       click: function (e) {
         e.preventDefault();
-        setIsQsheet(!isQsheet);
-        setIscurrentState("qsheet");
+        setIsCuesheet(!isCuesheet);
+        setIscurrentState("cuesheet");
         updateIconSidebar(e);
       },
       subItems: [
         {
-          id: "qsheet",
+          id: "cuesheet",
           label: "큐시트 관리",
-          link: "/qsheet",
-          parentId: "qsheet",
+          link: "/cuesheet",
+          parentId: "cuesheet",
         },
         {
-          id: "qsheettempl",
+          id: "cuesheetTemplate",
           label: "큐시트 템플릿 관리",
-          link: "/qsheettempl",
-          parentId: "qsheet",
+          link: "/cuesheetTemplate",
+          parentId: "cuesheet",
         },
       ],
     },

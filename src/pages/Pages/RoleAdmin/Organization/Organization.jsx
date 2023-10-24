@@ -5,20 +5,20 @@ import { Card, CardBody, CardHeader, Col } from "reactstrap";
 import TableContainer from "../../../../Components/Common/TableContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { getOrg } from "../../../../slices/thunks";
-import { updateOrgEnabled } from "../../../../helpers/organization_helper";
+// import { getOrganizationList } from "../../../../slices/thunks";
 
 const Organization = () => {
   const [enabled, setEnabled] = useState();
 
-  const dispatch = useDispatch();
+  const selectOrgListData = createSelector((state) => state);
 
   // const selectOrgListData = createSelector((state) => state);
 
   const appList = useSelector((state) => state.Org.content);
 
   useEffect(() => {
-    dispatch(getOrg());
+    // dispatch(getOrganizationList());
+    console.log(appList);
   }, [dispatch]);
 
   const onClickConfirm = (e) => {
@@ -59,7 +59,7 @@ const Organization = () => {
   const columns = useMemo(
     () => [
       {
-        Header: "조직코드",
+        Header: "Application ID",
         Cell: (appList) => (
           <>
             <NavLink to="#" className="fw-semibold link-primary">
@@ -69,12 +69,12 @@ const Organization = () => {
         ),
       },
       {
-        Header: "웨딩홀 이름",
+        Header: "COMPANY NAME",
         Cell: (appList) => (
           <>
             <div className="d-flex align-items-center">
               <div className="flex-grow-1 ms-2 ">
-                {appList.row.original.orgName}
+                {appList.row.original.company[0]}
               </div>
             </div>
           </>
@@ -84,41 +84,45 @@ const Organization = () => {
         Header: "주소",
         accessor: "orgAddress",
         filterable: true,
-        // Cell: (cellProps) => {
-        //   return <Designation {...cellProps} />;
-        // },
+        Cell: (cellProps) => {
+          return <Designation {...cellProps} />;
+        },
       },
       {
-        Header: "연락처",
-        accessor: "orgContact",
-        filterable: true,
+        Header: "Apply Date",
+        Cell: (appList) => (
+          <>
+            {appList.row.original.date}{" "}
+            {/* <small className="text-muted">{appList.row.original.time}</small> */}
+            <div>{appList.row.original.time}</div>
+          </>
+        ),
       },
       {
         Header: "사업자등록번호",
         accessor: "orgBiznum",
         filterable: true,
-        // Cell: (cellProps) => {
-        //   return <Contact {...cellProps} />;
-        //   // return <div>{cellProps}</div>;
-        // },
+        Cell: (cellProps) => {
+          return <Contact {...cellProps} />;
+          // return <div>{cellProps}</div>;
+        },
       },
       {
         Header: "가입 날짜",
         accessor: "created_at",
         filterable: true,
-        // Cell: (cellProps) => {
-        //   return <Type {...cellProps} />;
-        //   // return <div>{cellProps}</div>;
-        // },
+        Cell: (cellProps) => {
+          return <Type {...cellProps} />;
+          // return <div>{cellProps}</div>;
+        },
       },
       {
         Header: "승인여부",
         accessor: "orgEnabled",
         filterable: true,
         Cell: (cellProps) => {
-          const orgSeq = cellProps.row.original.orgSeq;
-          // console.log(orgSeq);
-          return <Status {...cellProps} orgSeq={orgSeq} />;
+          return <Status {...cellProps} />;
+          // return <div>{cellProps}</div>;
         },
       },
     ],

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getCuesheetsApi } from "./thunk";
 
 export const initialState = {
-  data: [],
+  getCuesheets: {},
   error: {},
 };
 

@@ -6,7 +6,7 @@ import DashboardEcommerce from "../pages/DashboardEcommerce";
 
 //login
 import Login from "../pages/Authentication/Login";
-import ForgetPasswordPage from "../pages/Authentication/ForgetPassword";
+// import ForgetPasswordPage from "../pages/Authentication/ForgetPassword";
 import Logout from "../pages/Authentication/Logout";
 import Register from "../pages/Authentication/Register";
 
@@ -16,7 +16,7 @@ import Maintenance from "../pages/Pages/Maintenance/Maintenance";
 import ComingSoon from "../pages/Pages/ComingSoon/ComingSoon";
 
 // User Profile
-import UserProfile from "../pages/Authentication/user-profile";
+// import UserProfile from "../pages/Authentication/user-profile";
 
 import Organization from "../pages/Pages/RoleAdmin/Organization/Organization";
 import Dashboard from "../pages/Pages/OrgAdmin/Dashboard/Dashboard";
@@ -53,7 +53,7 @@ const authProtectedRoutes = [
   { path: "/index", component: <DashboardEcommerce /> },
 
   //User Profile
-  { path: "/profile", component: <UserProfile /> },
+  // { path: "/profile", component: <UserProfile /> },
 
   //Pages
   { path: "/pages-starter", component: <Starter /> },
@@ -67,9 +67,9 @@ const authProtectedRoutes = [
   { path: "/calendar", component: <Calendar /> }, // 일정 관리
   { path: "/finaltempl", component: <FinalTemplate /> }, // 최종확인서 템플릿 관리
   { path: "/finaldocs", component: <FinalDocs /> }, // 최종확인서 관리
-  { path: "/qsheettempl", component: <CuesheetTemplate /> }, // 큐시트 템플릿 관리
-  { path: "/qsheet", component: <Cuesheet /> }, // 큐시트 관리,
-  { path: "/qsheet-create", component: <CreateCuesheet /> }, // 큐시트 생성
+  { path: "/cuesheetTemplate", component: <CuesheetTemplate /> }, // 큐시트 템플릿 관리
+  { path: "/cuesheet", component: <Cuesheet /> }, // 큐시트 관리,
+  { path: "/cuesheet-create", component: <CreateCuesheet /> }, // 큐시트 생성
   { path: "/document", component: <Document /> }, // 문서 관리
   { path: "/community", component: <Community /> }, // 커뮤니티
   { path: "/customer", component: <Customer /> }, // 고객 관리
@@ -97,7 +97,7 @@ const publicRoutes = [
   // Authentication Page
   { path: "/logout", component: <Logout /> },
   { path: "/login", component: <Login /> },
-  { path: "/forgot-password", component: <ForgetPasswordPage /> },
+  // { path: "/forgot-password", component: <ForgetPasswordPage /> },
   { path: "/register", component: <Register /> },
 
   //AuthenticationInner pages
