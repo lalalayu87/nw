@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getCuesheetsApi } from "./thunk";
 
 export const initialState = {
-  content: [],
+  data: [],
   error: {},
 };
 
@@ -16,10 +16,10 @@ const cuesheetSlice = createSlice({
       console.log("state", state);
       console.log("action", action);
       console.log("payload", action.payload);
-      state.getCuesheets = action.payload.data;
+      state.getCuesheets = action.payload;
     });
 
-    builder.addCase(getCuesheets.rejected, (state, action) => {
+    builder.addCase(getCuesheetsApi.rejected, (state, action) => {
       state.error = action.payload.error || null;
     });
   },

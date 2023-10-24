@@ -19,7 +19,7 @@ export const isUserAuthenticated = () => {
 export const getCuesheets = (data) => {
   console.log("----cuesheet_helper----");
   console.log(url.GET_CUESHEET);
-  console.log(data);
+
   return api.get(url.GET_CUESHEET, data).catch((err) => {
     var message;
     console.log("message", message); //에러 없으니까 메시지 안 나옴

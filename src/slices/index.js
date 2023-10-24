@@ -9,6 +9,7 @@ import AccountReducer from "./auth/register/reducer";
 import ForgetPasswordReducer from "./auth/forgetpwd/reducer";
 import ProfileReducer from "./auth/profile/reducer";
 import OrganizationReducer from "./organization/reducer";
+import CuesheetReducer from "./cuesheet/reducer";
 
 const rootReducer = combineReducers({
   Layout: LayoutReducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   ForgetPassword: ForgetPasswordReducer,
   Profile: ProfileReducer,
   Org: OrganizationReducer,
+  cuesheet: CuesheetReducer,
 });
 
 export default rootReducer;
